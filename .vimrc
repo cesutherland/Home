@@ -13,4 +13,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nowrap
+
 set pastetoggle=<F2>
+map <F5> :set nowrap! <CR>
