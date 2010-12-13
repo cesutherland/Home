@@ -3,3 +3,5 @@
 !.vim/*
 !.vimrc
 !Pictures/*
+!.Xmodmap
+!.xinitrc
