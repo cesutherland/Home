@@ -1,2 +1,4 @@
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
+remove Shift = Shift_R
+add Lock = Shift_R
