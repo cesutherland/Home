@@ -17,3 +17,4 @@ set nowrap
 
 set pastetoggle=<F2>
 map <F5> :set nowrap! <CR>
+map <F6> :set nonumber! <CR>
