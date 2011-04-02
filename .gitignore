@@ -1,6 +1,8 @@
 *
 !.gitignore
+!.vim/*/*
 !.vim/*
+!.vim
 !.vimrc
 !Pictures/*
 !.Xmodmap
