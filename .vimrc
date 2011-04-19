@@ -1,6 +1,6 @@
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-colorscheme delek
+colorscheme deleklocal
 
 set formatoptions=tcroqw
 
@@ -18,6 +18,9 @@ set nowrap
 set pastetoggle=<F2>
 map <F5> :set nowrap! <CR>
 map <F6> :set nonumber! <CR>
+
+map <F9> :GitDiff <CR>
+map <F10> :GitCommit <CR>
 
 "folding
 set foldmethod=indent   "fold based on indent
