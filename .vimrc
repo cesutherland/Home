@@ -16,6 +16,9 @@ set expandtab
 set nowrap
 
 set pastetoggle=<F2>
+
+map <F4> :NERDTreeToggle <CR>
+
 map <F5> :set nowrap! <CR>
 map <F6> :set nonumber! <CR>
 
