@@ -35,4 +35,4 @@ set nofoldenable        "dont fold by default
 set foldlevel=3         "this is just what i use
 
 filetype plugin indent on
-autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2
