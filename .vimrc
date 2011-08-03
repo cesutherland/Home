@@ -30,6 +30,11 @@ map <F8> :set tabstop=4 shiftwidth=4 <CR>
 map <F9> :GitDiff <CR>
 map <F10> :GitCommit <CR>
 
+" Tabbed editing
+nmap ,, :tabnew<CR>
+nmap ,. :tabnext<CR>
+nmap ., :tabpre<CR>
+
 "folding
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
