@@ -10,6 +10,10 @@ let colors_name = "delek"
 hi Normal     guifg=Black  guibg=White
 hi Cursor     guifg=bg     guibg=fg
 hi lCursor    guifg=NONE   guibg=Cyan
+hi TabLine    ctermfg=Grey ctermbg=Black
+hi TabLineFill ctermfg=Black ctermbg=Black
+hi TabLineSel ctermfg=White ctermbg=Black
+
 
 " Note: we never set 'term' because the defaults for B&W terminals are OK
 hi DiffAdd    ctermbg=LightBlue    guibg=LightBlue
