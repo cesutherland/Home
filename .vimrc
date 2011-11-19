@@ -35,7 +35,7 @@ nmap ,, :tabnew<CR>
 nmap ,. :tabnext<CR>
 nmap ., :tabpre<CR>
 
-"folding
+" Code folding
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
