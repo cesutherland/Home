@@ -36,10 +36,10 @@ nmap ,. :tabnext<CR>
 nmap ., :tabpre<CR>
 
 " Code folding
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=3         "this is just what i use
+set foldmethod=indent   " fold based on indent
+set foldnestmax=10      " deepest fold is 10 levels
+set nofoldenable        " dont fold by default
+set foldlevel=3         " this is just what i use
 
 filetype plugin indent on
 autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2
