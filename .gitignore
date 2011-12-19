@@ -3,6 +3,7 @@
 !.vim/*/*
 !.vim/*
 !.vim
+.vim/.netrwhist
 !.vimrc
 !Pictures/*
 !.Xmodmap
