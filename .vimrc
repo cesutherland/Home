@@ -1,6 +1,6 @@
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-colorscheme deleklocal
+colorscheme delek
 
 set formatoptions=tcroqw
 
