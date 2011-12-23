@@ -158,7 +158,7 @@ function parse_git_unpushed {
   if [[ "$unpushed" != "" ]]; then
     echo -e "\033[1;31m\xE2\x9A\xA1"
   else
-    echo -e "\033[1;31m\xE2\x9D\x80\033[0m"
+    echo -e "\033[1;32m\xE2\x9D\x80\033[0m"
   fi
 }
 
