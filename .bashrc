@@ -175,7 +175,7 @@ function parse_git_branch {
   [[ $branch ]] && echo -e "[\033[1;33m$branch$(parse_git_dirty)$(parse_git_unpushed)\033[0m] "
 }
 
-export PS1='\u@\h \[\033[1;34m\]\w\[\033[0m\] $(parse_git_branch)$'
+export PS1='\u@\h \[\033[1;34m\]\w\[\033[0m\] $(parse_git_branch)$ '
 
 print_pre_prompt () 
 { 
