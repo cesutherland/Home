@@ -155,12 +155,16 @@ function get_git_branch {
 
 function parse_git_unpushed {
   local unpushed=`/usr/bin/git cherry -v origin/$(get_git_branch)`
-  [[ "$unpushed" != "" ]] && echo "$(tput setaf 1) with unpushed $(tput sgr0)"
+  if [[ "$unpushed" != "" ]]; then
+    echo -e "\033[1;31m\xE2\x9A\xA1"
+  else
+    echo -e "\033[1;31m\xE2\x9D\x80\033[0m"
+  fi
 }
 
 parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
-    echo -e "\033[1;31m*\033[0m"
+    echo -e "\033[1;31m\xE2\x9C\x97\033[0m"
   else
     local thing=1
   fi
