@@ -110,6 +110,9 @@ rvm_path="$HOME/.rvm"
 export PATH=$HOME/local/bin:$PATH
 
 # GIT
+alias gits='git status'
+alias gc='git commit'
+
 function git_prompt_status() { # for future use, from oh my zsh
   local index=$(git status --porcelain 2> /dev/null)
   local gitstatus=""
