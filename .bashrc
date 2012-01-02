@@ -185,3 +185,6 @@ print_pre_prompt ()
     printf "%*s\r" $COLUMNS "$USER@$HOSTNAME"
 }
 #PROMPT_COMMAND=print_pre_prompt
+
+# VI
+set -o vi
