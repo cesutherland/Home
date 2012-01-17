@@ -112,6 +112,7 @@ export PATH=$HOME/local/bin:$PATH
 # GIT
 alias gits='git status'
 alias gc='git commit'
+alias gd='git diff'
 
 function git_prompt_status() { # for future use, from oh my zsh
   local index=$(git status --porcelain 2> /dev/null)
