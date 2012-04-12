@@ -10,8 +10,8 @@ set title
 set cindent
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set nowrap
 
@@ -43,3 +43,5 @@ set foldlevel=3         " this is just what i use
 
 filetype plugin indent on
 autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2
+
+set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
