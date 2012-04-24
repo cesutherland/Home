@@ -106,13 +106,17 @@ fi
 rvm_path="$HOME/.rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# NVM
+. ~/Source/nvm/nvm.sh
+
 # Local
-export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
 
 # GIT
 alias gits='git status'
 alias gc='git commit'
 alias gd='git diff'
+alias ga='git add'
 
 function git_prompt_status() { # for future use, from oh my zsh
   local index=$(git status --porcelain 2> /dev/null)
