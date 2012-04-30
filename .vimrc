@@ -45,3 +45,6 @@ filetype plugin indent on
 autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2
 
 set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
+
+" pathogen
+call pathogen#infect()
