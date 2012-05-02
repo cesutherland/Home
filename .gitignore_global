@@ -1,2 +1,10 @@
+#
+# Git Global Ignore
+# 
+# Setup:
 # git config --global core.excludesfile ~/.gitignore_global
+#
+
+# vim files:
+Session.vim
 *.swp
