@@ -1,0 +1,5 @@
+[GntEntry::remap]
+# Remap the up-arrow to the left-arrow
+[GntTree::binding]
+k = move-up
+j = move-down
