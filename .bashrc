@@ -113,11 +113,6 @@ rvm_path="$HOME/.rvm"
 export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
 
 # GIT
-alias gits='git status'
-alias gc='git commit'
-alias gd='git diff'
-alias ga='git add'
-
 function git_prompt_status() { # for future use, from oh my zsh
   local index=$(git status --porcelain 2> /dev/null)
   local gitstatus=""
@@ -193,3 +188,10 @@ print_pre_prompt ()
 
 # VI
 set -o vi
+
+# Aliases
+alias gits='git status'
+alias gc='git commit'
+alias gd='git diff'
+alias ga='git add'
+alias ack='ack-grep'
