@@ -48,3 +48,9 @@ set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
 
 " pathogen
 call pathogen#infect()
+
+" window movement
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
