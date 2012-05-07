@@ -6,5 +6,5 @@
 #
 
 # vim files:
-Session.vim
+*.vim
 *.swp
