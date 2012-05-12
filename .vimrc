@@ -57,3 +57,6 @@ map <C-l> <C-w>l
 
 " mouse
 set mouse=a
+
+" highlight column 80
+set colorcolumn=80
