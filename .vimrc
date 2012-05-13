@@ -61,3 +61,4 @@ set mouse=a
 
 " highlight column 80
 set colorcolumn=80
+highlight ColorColumn ctermbg=7
