@@ -157,11 +157,21 @@ function get_git_branch {
 }
 
 function parse_git_unpushed {
-  local unpushed=`/usr/bin/git cherry -v origin/$(get_git_branch)`
-  if [[ "$unpushed" != "" ]]; then
-    echo -e "\033[1;31m\xE2\x9A\xA1"
+  # Check first for branch remote
+  local unpublished=`__git_refs | grep origin/$(get_git_branch)`
+  if [[ "$unpublished" == "" ]]; then
+    # No remote
+    echo -e "\033[1;31m\xE2\x9C\xAA"
   else
-    echo -e "\033[1;32m\xE2\x9D\x80\033[0m"
+    # Check if we've pushed to remote
+    local unpushed=`/usr/bin/git cherry -v origin/$(get_git_branch)`
+    if [[ "$unpushed" != "" ]]; then
+      # Unpushed
+      echo -e "\033[1;31m\xE2\x9A\xA1"
+    else
+      # Pushed
+      echo -e "\033[1;32m\xE2\x9D\x80\033[0m"
+    fi
   fi
 }
 
