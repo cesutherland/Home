@@ -59,6 +59,11 @@ map <C-l> <C-w>l
 " mouse
 set mouse=a
 
+map <Leader>gs :Git status 
+map <Leader>gc :Git commit 
+map <Leader>ga :Git add 
+map <Leader>gd :Git diff 
+
 " highlight column 80
 set colorcolumn=80
 highlight ColorColumn ctermbg=7
