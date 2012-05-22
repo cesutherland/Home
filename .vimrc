@@ -65,5 +65,5 @@ map <Leader>ga :Git add
 map <Leader>gd :Git diff 
 
 " highlight column 80
-set colorcolumn=80
-highlight ColorColumn ctermbg=7
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=7
