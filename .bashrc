@@ -156,15 +156,21 @@ function get_git_branch {
   echo $(__git_ps1 "%s")
 }
 
+function get_git_remote {
+  echo $(git config --get branch.$branch.remote)
+}
+
 function parse_git_unpushed {
   # Check first for branch remote
-  local unpublished=`__git_refs | grep origin/$(get_git_branch)`
+  local branch=`get_git_branch`
+  local remote=`get_git_remote`
+  local unpublished=`__git_refs | grep $remote/$branch`
   if [[ "$unpublished" == "" ]]; then
     # No remote
     echo -e "\033[1;31m\xE2\x9C\xAA"
   else
     # Check if we've pushed to remote
-    local unpushed=`/usr/bin/git cherry -v origin/$(get_git_branch)`
+    local unpushed=`/usr/bin/git cherry -v $remote/$branch`
     if [[ "$unpushed" != "" ]]; then
       # Unpushed
       echo -e "\033[1;31m\xE2\x9A\xA1"
@@ -184,7 +190,13 @@ parse_git_dirty() {
 }
 
 function parse_git_branch {
-  local branch=$(__git_ps1 "%s")
+  local branch=`get_git_branch`
+  local remote=`get_git_remote`
+
+  if [[ $remote != "origin" ]]; then
+    branch="$remote\033[1;34m/\033[1;33m$branch"
+  fi
+
   [[ $branch ]] && echo -e "[\033[1;33m$branch$(parse_git_dirty)$(parse_git_unpushed)\033[0m] "
 }
 
