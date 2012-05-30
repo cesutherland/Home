@@ -1,6 +1,7 @@
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-colorscheme delek
+set t_Co=256
+colorscheme deleklocal
 
 set formatoptions=tcroqw
 
@@ -65,5 +66,8 @@ map <Leader>ga :Git add
 map <Leader>gd :Git diff 
 
 " highlight column 80
-" set colorcolumn=80
+" set colorcolumn=81
 " highlight ColorColumn ctermbg=7
+
+set backupdir=~/tmp
+set directory=~/tmp
