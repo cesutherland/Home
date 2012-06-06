@@ -170,7 +170,11 @@ function parse_git_unpushed {
     echo -e "\033[1;31m\xE2\x9C\xAA"
   else
     # Check if we've pushed to remote
-    local unpushed=`/usr/bin/git cherry -v $remote/$branch`
+    if [[ $remote != "" ]]; then
+      local unpushed=`/usr/bin/git cherry -v $remote/$branch`
+    else
+      local unpushed=`/usr/bin/git cherry -v origin/$branch`
+    fi
     if [[ "$unpushed" != "" ]]; then
       # Unpushed
       echo -e "\033[1;31m\xE2\x9A\xA1"
