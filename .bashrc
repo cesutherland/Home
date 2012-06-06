@@ -193,7 +193,7 @@ function parse_git_branch {
   local branch=`get_git_branch`
   local remote=`get_git_remote`
 
-  if [[ $branch != "" && $remote != "origin" ]]; then
+  if [[ $branch != "" && $remote != "" && $remote != "origin" ]]; then
     branch="$remote\033[1;34m/\033[1;33m$branch"
   fi
 
