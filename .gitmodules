@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule ".vim/bundle/vim-ack"]
+	path = .vim/bundle/vim-ack
+	url = https://github.com/mileszs/ack.vim
