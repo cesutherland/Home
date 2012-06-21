@@ -167,7 +167,7 @@ function parse_git_unpushed {
   local unpublished=`__git_refs | grep $remote/$branch`
   if [[ "$unpublished" == "" ]]; then
     # No remote
-    echo -e "\033[1;31m\xE2\x9C\xAA"
+    echo -e "\001\033[1;31m\002\xE2\x9C\xAA"
   else
     # Check if we've pushed to remote
     if [[ $remote != "" ]]; then
@@ -177,17 +177,17 @@ function parse_git_unpushed {
     fi
     if [[ "$unpushed" != "" ]]; then
       # Unpushed
-      echo -e "\033[1;31m\xE2\x9A\xA1"
+      echo -e "\001\033[1;31m\002\xE2\x9A\xA1"
     else
       # Pushed
-      echo -e "\033[1;32m\xE2\x9D\x80\033[0m"
+      echo -e "\001\033[1;32m\002\xE2\x9D\x80\001\033[0m\002"
     fi
   fi
 }
 
 parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
-    echo -e "\033[1;31m\xE2\x9C\x97\033[0m"
+    echo -e "\001\033[1;31m\002\xE2\x9C\x97\001\033[0m\002"
   else
     local thing=1
   fi
@@ -198,13 +198,13 @@ function parse_git_branch {
   local remote=`get_git_remote`
 
   if [[ $branch != "" && $remote != "" && $remote != "origin" ]]; then
-    branch="$remote\033[1;34m/\033[1;33m$branch"
+    branch="$remote\001\033[1;34m\002/\001\033[1;33m\002$branch"
   fi
 
-  [[ $branch ]] && echo -e "[\033[1;33m$branch$(parse_git_dirty)$(parse_git_unpushed)\033[0m] "
+  [[ $branch ]] && echo -e "[\001\033[1;33m\002$branch$(parse_git_dirty)$(parse_git_unpushed)\001\033[0m\002] "
 }
 
-export PS1='\u@\h \[\033[1;34m\]\w\[\033[0m\] $(parse_git_branch)$ '
+export PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)$ '
 
 print_pre_prompt () 
 { 
