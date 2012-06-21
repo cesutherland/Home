@@ -26,8 +26,8 @@ map <F4> :NERDTreeToggle <CR>
 
 map <F5> :set nowrap! <CR>
 map <F6> :set nonumber! <CR>
-map <F7> :set tabstop=2 shiftwidth=2 <CR>
-map <F8> :set tabstop=4 shiftwidth=4 <CR>
+map <F7> :set tabstop=2 softtabstop=2 shiftwidth=2 <CR>
+map <F8> :set tabstop=4 softtabstop=4 shiftwidth=4 <CR>
 
 map <F9> :GitDiff <CR>
 map <F10> :GitCommit <CR>
