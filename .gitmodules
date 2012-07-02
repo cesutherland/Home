@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/vim-numbers"]
 	path = .vim/bundle/vim-numbers
 	url = git://github.com/myusuf3/numbers.vim.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
