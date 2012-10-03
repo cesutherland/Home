@@ -1,1 +1,6 @@
-/home/carl/.ackrc
+--type-set
+handlebars=.handlebars,.hbs
+--type-set
+less=.less
+--type-set
+styl=.styl
