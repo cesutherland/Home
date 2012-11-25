@@ -224,3 +224,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gp='git push'
 alias ack='ack-grep'
+
+function ackr () {
+  ack-grep $1 -l | xargs perl -pi -E "$2"
+}
