@@ -48,7 +48,7 @@ my $home                 = $ENV{ 'HOME' };               # grab homedir for curr
 my $this_script_fullpath = File::Spec->rel2abs( $0 );    # convert path to fullpath;
 my ( $this_script, $parent_dir ) = fileparse( $this_script_fullpath );    # grab name of currently running script;
 
-my @files = grep { !/[$this_script|README]$/ } ( <$parent_dir*> );        # grab all files, except this script and any README;
+my @files = grep { !/($this_script|README)$/ } ( <$parent_dir*> );        # grab all files, except this script and any README;
 
 for my $file ( @files ) {                                                 # look at each file/dir in CWD;
     my $dotfile = $home . '/.' . basename( $file );                       # concatenate fullpath to symlink for dotfile;
