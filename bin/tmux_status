@@ -1,0 +1,78 @@
+#!/usr/bin/perl -CS
+
+use warnings;
+use strict;
+use POSIX ();
+use Term::ANSIColor;
+use utf8;
+
+# array of sparks:
+my @sparks = split('', '▁▂▃▄▅▆▇█');
+
+# smelly tmux colors:
+my %colors = (
+  black => '#[fg=black]', 
+  red => '#[fg=red]',
+  green => '#[fg=green]',
+  brown => '#[fg=brown}',
+  blue => '#[fg=blue]',
+  magenta => '#[fg=magenta]',
+  cyan => '#[fg=cyan]',
+  white => '#[fg=white]',
+  yellow => '#[fg=yellow]',
+  orange => '#[fg=orange]',
+  blink => '#[blink]',
+  reset => '#[default]'
+);
+
+sub print_time {
+  print POSIX::strftime("%H:%M %m/%d/%Y", localtime);
+}
+
+sub print_battery {
+  my $battery = `acpi -b`;
+  chomp $battery;
+  # gather battery info
+  my @info = split(/,?\s/, $battery);
+  my $state = $info[2];
+  my $percent = $info[3];
+  $percent =~ /(\d+)/;
+  $percent = $1;
+
+  # print a lightning when charging:
+  my $decoration = '';
+  if ($state eq 'Charging' || $state eq 'Charged' || $state eq 'Full') {
+    $decoration = '⌁';
+  }
+
+  # pull out battery spark:
+  # map [0, 100] -> [0, 7] as integers
+  my $spark = $sparks[POSIX::floor(0.0799 * $percent)];
+
+  # color text when battery low
+  if ($state eq 'Discharging') {
+    if ($percent <= 40) {
+      print $colors{'yellow'};
+    }
+    if ($percent <= 20) {
+      print $colors{'red'};
+    }
+    if ($percent <= 5) {
+      print $colors{'blink'};
+    }
+  }
+
+  print $decoration;
+  print $spark;
+  print ' ';
+  print $percent;
+  print '%';
+
+  print $colors{'reset'};
+}
+
+print ' ';
+print_battery;
+print '  ';
+print_time;
+print ' ';

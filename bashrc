@@ -212,6 +212,7 @@ rvm_path="$HOME/.rvm"
 
 # Local
 export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
+export PATH=$PATH:$HOME/.bin
 
 # VI
 set -o vi
