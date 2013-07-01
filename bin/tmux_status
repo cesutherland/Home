@@ -31,7 +31,18 @@ sub print_time {
 
 sub print_battery {
   my $battery = `acpi -b`;
+
+  # skip if acpi not installed or no battery
+  # if no battery, acpi exists successfully but prints to stderr
+  if ($? != 0 || $battery eq '') {
+    return;
+  }
+
+  print $?;
+
+  # remove newline
   chomp $battery;
+
   # gather battery info
   my @info = split(/,?\s/, $battery);
   my $state = $info[2];
