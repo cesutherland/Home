@@ -4,3 +4,5 @@ handlebars=.handlebars,.hbs
 less=.less
 --type-set
 styl=.styl
+--type-set
+json=.json
