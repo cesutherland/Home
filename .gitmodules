@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-pig"]
 	path = vim/bundle/vim-pig
 	url = git://github.com/jorgeramirez/vim-pig.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git

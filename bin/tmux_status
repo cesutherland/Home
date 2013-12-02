@@ -38,8 +38,6 @@ sub print_battery {
     return;
   }
 
-  print $?;
-
   # remove newline
   chomp $battery;
 
