@@ -78,3 +78,10 @@ set nobackup
 set nowritebackup
 "no swap files
 set noswapfile
+
+" statusline
+set laststatus=2
+set statusline=%t\ \ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}%=%l,%c/%L\ %P
+hi StatusLine ctermbg=Black ctermfg=Grey
+hi StatusLineNC ctermbg=Black ctermfg=Black
+
