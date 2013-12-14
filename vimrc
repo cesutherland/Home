@@ -71,3 +71,10 @@ map <Leader>gd :Git diff
 
 set backupdir=~/tmp
 set directory=~/tmp
+
+"no backup files
+set nobackup
+"only in case you don't want a backup file while editing
+set nowritebackup
+"no swap files
+set noswapfile
