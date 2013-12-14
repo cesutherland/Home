@@ -206,6 +206,7 @@ print_pre_prompt ()
 # RVM
 rvm_path="$HOME/.rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # NVM
 . ~/Source/nvm/nvm.sh
