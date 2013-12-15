@@ -80,8 +80,12 @@ set nowritebackup
 set noswapfile
 
 " statusline
-set laststatus=2
-set statusline=%t\ \ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}%=%l,%c/%L\ %P
-hi StatusLine ctermbg=Black ctermfg=Grey
-hi StatusLineNC ctermbg=Black ctermfg=Black
+set laststatus=1
+set statusline=\ %t\ \ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}
+set statusline+=%=%l,%c/%L\ \ \ \ \ %P\ 
+hi StatusLine ctermbg=Black ctermfg=Grey cterm=underline
+hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
 
+" split color
+hi VertSplit ctermbg=Black ctermfg=8
+set fillchars=vert:\│
