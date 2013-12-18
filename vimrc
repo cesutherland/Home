@@ -81,7 +81,7 @@ set noswapfile
 
 " statusline
 set laststatus=1
-set statusline=\ %t\ \ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}
+set statusline=\ %f\ %m\ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}
 set statusline+=%=%l,%c/%L\ \ \ \ \ %P\ 
 hi StatusLine ctermbg=Black ctermfg=Grey cterm=underline
 hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
