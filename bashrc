@@ -225,7 +225,6 @@ alias gc='git commit'
 alias gd='git diff'
 alias ga='git add'
 alias gp='git push'
-alias ack='ack-grep'
 alias tma='tmux attach -d -t'
 # alias vim='vim -X'
 
