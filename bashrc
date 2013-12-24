@@ -229,5 +229,5 @@ alias tma='tmux attach -d -t'
 # alias vim='vim -X'
 
 function ackr () {
-  ack-grep $1 -l | xargs perl -pi -E "$2"
+  ack $1 -l | xargs perl -pi -E "$2"
 }
