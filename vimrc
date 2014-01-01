@@ -1,7 +1,6 @@
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 set t_Co=256
-colorscheme deleklocal
 
 set formatoptions=tcroqw
 
@@ -83,12 +82,16 @@ set noswapfile
 set laststatus=1
 set statusline=\ %f\ %m\ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}
 set statusline+=%=%l,%c/%L\ \ \ \ \ %P\ 
-hi StatusLine ctermbg=Black ctermfg=Grey cterm=underline
-hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
 
-" split color
-hi VertSplit ctermbg=Black ctermfg=8
+" splits
 set fillchars=vert:\│
 
 " syntax
 syntax on
+
+" color scheme
+colorscheme deleklocal
+" customization:
+hi StatusLine ctermbg=Black ctermfg=Grey cterm=underline
+hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
+hi VertSplit ctermbg=Black ctermfg=8
