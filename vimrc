@@ -89,3 +89,6 @@ hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
 " split color
 hi VertSplit ctermbg=Black ctermfg=8
 set fillchars=vert:\│
+
+" syntax
+syntax on
