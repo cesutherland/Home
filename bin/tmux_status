@@ -30,6 +30,15 @@ sub print_time {
 }
 
 sub print_battery {
+  if (`which acpi`) {
+    print_battery_acpi();
+  } elsif (`which ioreg`) {
+    print_battery_ioreg();
+  }
+}
+
+sub print_battery_acpi {
+
   my $battery = `acpi -b`;
 
   # skip if acpi not installed or no battery
@@ -53,6 +62,36 @@ sub print_battery {
   if ($state eq 'Charging' || $state eq 'Charged' || $state eq 'Full') {
     $decoration = '⌁';
   }
+
+  &print_battery_status($percent, $decoration, $state);
+}
+
+sub print_battery_ioreg {
+
+  my $battery = `pmset -g batt`;
+
+  # remove newline
+  chomp $battery;
+  $battery =~ s/^(?:.*\n){1}//;
+
+  #gather battery info
+  my @info = split(/%?;?\s+/, $battery);
+  my $state = $info[3];
+  my $percent = $info[2];
+
+  #print a lightning when charging:
+  my $decoration = '';
+  if ($state eq 'charging' || $state eq 'charged' || $state eq 'Full') {
+    $decoration = '⌁';
+  }
+
+  &print_battery_status($percent, $decoration, $state);
+}
+
+# print battery status line
+sub print_battery_status {
+
+  my ($percent, $decoration, $state) = @_;
 
   # pull out battery spark:
   # map [0, 100] -> [0, 7] as integers
