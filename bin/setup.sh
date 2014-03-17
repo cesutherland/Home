@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Setup ubuntu sytems
-sudo apt-get install aptitude git ack-grep vim tmux firefox chromium-browser virtualbox keepass2 ssh curl g++ redshift
+sudo apt-get install aptitude git ack-grep vim tmux firefox chromium-browser virtualbox keepass2 ssh curl g++ redshift libnotify-bin
 
 # Spotify:
 sudo add-apt-repository "deb http://repository.spotify.com stable non-free"
