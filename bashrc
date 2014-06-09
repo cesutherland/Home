@@ -143,31 +143,27 @@ function git_prompt_status() { # for future use, from oh my zsh
 }
 
 function get_git_branch {
-  echo $(__git_ps1 "%s")
+  echo $(git rev-parse --abbrev-ref HEAD 2> /dev/null);
+  # echo $(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 function get_git_remote {
+  # echo $(git remote)
   echo $(git config --get branch.$branch.remote)
 }
 
 function parse_git_unpushed {
-  # Check first for branch remote
   local branch=`get_git_branch`
   local remote=`get_git_remote`
-  local unpublished=`__git_refs | grep $remote/$branch`
-  if [[ "$unpublished" == "" ]]; then
+  if [[ "$remote" == "" ]]; then
     # No remote
     echo -e "\001\033[1;31m\002\xE2\x9C\xAA"
   else
-    # Check if we've pushed to remote
-    if [[ $remote != "" ]]; then
-      local unpushed=`/usr/bin/git cherry -v $remote/$branch`
-    else
-      local unpushed=`/usr/bin/git cherry -v origin/$branch`
-    fi
-    if [[ "$unpushed" != "" ]]; then
+    local pushed=$(git branch -v | grep $branch)
+    if [[ $pushed =~ ("[ahead "([[:digit:]]*)]) ]]
+    then
       # Unpushed
-      echo -e "\001\033[1;31m\002\xE2\x9A\xA1"
+      echo -e "\001\033[1;31m\002\xE2\x9A\xA1\001\033[0m\002"
     else
       # Pushed
       echo -e "\001\033[1;32m\002\xE2\x9D\x80\001\033[0m\002"
