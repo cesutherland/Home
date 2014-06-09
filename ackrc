@@ -6,3 +6,5 @@ less=.less
 styl=.styl
 --type-set
 json=.json
+--type-set
+html=.phtml
