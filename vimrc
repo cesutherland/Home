@@ -99,3 +99,8 @@ hi VertSplit ctermbg=Black ctermfg=8
 " fix backspace
 set backspace=indent,eol,start
 
+function! FormatJSON()
+  :%! python -m json.tool
+  :%s/\ \ \ \ /  /g
+endfunction
+command JSON call FormatJSON()
