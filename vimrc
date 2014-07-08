@@ -19,6 +19,9 @@ set nowrap
 set wildmode=longest,list,full
 set wildmenu
 
+" always show status line:
+set laststatus=2
+
 set pastetoggle=<F2>
 
 map <F4> :NERDTreeToggle <CR>
