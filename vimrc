@@ -20,7 +20,6 @@ set wildmode=longest,list,full
 set wildmenu
 
 " always show status line:
-set laststatus=2
 
 set pastetoggle=<F2>
 
@@ -82,7 +81,7 @@ set nowritebackup
 set noswapfile
 
 " statusline
-set laststatus=1
+set laststatus=2
 set statusline=\ %f\ %m\ %y\ %{strlen(&fenc)?&fenc:'none'},\ %{&ff}
 set statusline+=%=%l,%c/%L\ \ \ \ \ %P\ 
 
