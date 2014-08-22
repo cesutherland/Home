@@ -8,3 +8,5 @@ styl=.styl
 json=.json
 --type-set
 html=.phtml
+--type-set
+coffee=.coffee
