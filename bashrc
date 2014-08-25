@@ -215,6 +215,9 @@ export PATH=$PATH:$HOME/.bin
 set -o vi
 EDITOR=/usr/bin/vim
 
+# tmux
+source ~/.bin/tmuxinator.bash
+
 # Aliases
 alias gits='git status'
 alias gc='git commit'
