@@ -1,3 +1,5 @@
 *.swp
 .vim/.netrwhist
 !.vim
+.DS_Store
+vim/.netrwhist
