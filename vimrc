@@ -106,3 +106,8 @@ function! FormatJSON()
   :%s/\ \ \ \ /  /g
 endfunction
 command JSON call FormatJSON()
+
+" CtrlP
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+map ; :CtrlPBuffer<CR>
