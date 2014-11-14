@@ -52,4 +52,7 @@ hi Special    cterm=NONE ctermfg=LightRed    gui=NONE guifg=deeppink
 hi Statement  cterm=bold ctermfg=Blue	     gui=bold guifg=blue
 hi Type	      cterm=NONE ctermfg=Blue	     gui=bold guifg=blue
 
+" Syntastic:
+hi SignColumn ctermbg=NONE
+
 " vim: sw=2
