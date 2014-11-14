@@ -10,9 +10,9 @@ let colors_name = "delek"
 hi Normal     guifg=Black  guibg=White
 hi Cursor     guifg=bg     guibg=fg
 hi lCursor    guifg=NONE   guibg=Cyan
-hi TabLine    ctermfg=Grey ctermbg=Black
-hi TabLineFill ctermfg=Black ctermbg=Black
-hi TabLineSel ctermfg=White ctermbg=Black
+hi TabLine    ctermfg=7 ctermbg=NONE
+hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel ctermfg=NONE ctermbg=NONE
 
 
 " Note: we never set 'term' because the defaults for B&W terminals are OK
@@ -34,10 +34,10 @@ hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
 hi SpecialKey ctermfg=DarkBlue	   guifg=Blue
-hi StatusLine cterm=bold	   ctermbg=blue ctermfg=yellow guibg=gold guifg=blue
-hi StatusLineNC	cterm=bold	   ctermbg=blue ctermfg=black  guibg=gold guifg=blue
+hi StatusLine cterm=bold	   ctermbg=NONE guibg=gold guifg=blue
+hi StatusLineNC	cterm=bold	   ctermbg=NONE ctermfg=8 guibg=gold guifg=blue
 hi Title      ctermfg=DarkMagenta  gui=bold guifg=Magenta
-hi VertSplit  cterm=reverse	   gui=reverse
+hi VertSplit  cterm=NONE ctermbg=NONE gui=reverse
 hi Visual     ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
 hi VisualNOS  cterm=underline,bold gui=underline,bold
 hi WarningMsg ctermfg=DarkRed	   guifg=Red

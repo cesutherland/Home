@@ -93,10 +93,6 @@ syntax on
 
 " color scheme
 colorscheme deleklocal
-" customization:
-hi StatusLine ctermbg=Black ctermfg=Grey cterm=underline
-hi StatusLineNC ctermbg=Black ctermfg=8 cterm=underline
-hi VertSplit ctermbg=Black ctermfg=8
 
 " fix backspace
 set backspace=indent,eol,start
