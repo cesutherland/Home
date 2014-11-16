@@ -34,8 +34,8 @@ hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
 hi SpecialKey ctermfg=DarkBlue	   guifg=Blue
-hi StatusLine cterm=bold	   ctermbg=NONE guibg=gold guifg=blue
-hi StatusLineNC	cterm=bold	   ctermbg=NONE ctermfg=8 guibg=gold guifg=blue
+hi StatusLine cterm=bold	   ctermbg=NONE guibg=gold guifg=blue cterm=underline
+hi StatusLineNC	cterm=bold	   ctermbg=NONE ctermfg=8 guibg=gold guifg=blue cterm=underline
 hi Title      ctermfg=DarkMagenta  gui=bold guifg=Magenta
 hi VertSplit  cterm=NONE ctermbg=NONE gui=reverse
 hi Visual     ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
