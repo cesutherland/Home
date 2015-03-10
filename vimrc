@@ -108,6 +108,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 map ; :CtrlPBuffer<CR>
 
-" Enable project-specific settings
-set exrc
-set secure
+" Syntastic
+"let g:syntastic_javascript_jshint_exec = '/home/carl/local/bin/jshint'
+" let g:syntastic_jshint_exec = '/home/carl/local/bin/jshint'
+let g:syntastic_javascript_checkers = ['jshint']
