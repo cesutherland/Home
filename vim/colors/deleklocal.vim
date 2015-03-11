@@ -29,7 +29,7 @@ hi LineNr     ctermfg=58	   guifg=Brown
 hi ModeMsg    cterm=bold	   gui=bold
 hi MoreMsg    ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
-hi Pmenu      guibg=LightBlue
+hi Pmenu      ctermfg=LightGrey guibg=LightBlue
 hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
