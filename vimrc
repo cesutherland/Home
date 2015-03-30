@@ -1,5 +1,3 @@
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
 set t_Co=256
 
 set formatoptions=tcroqw
@@ -112,3 +110,10 @@ map ; :CtrlPBuffer<CR>
 "let g:syntastic_javascript_jshint_exec = '/home/carl/local/bin/jshint'
 " let g:syntastic_jshint_exec = '/home/carl/local/bin/jshint'
 let g:syntastic_javascript_checkers = ['jshint']
+
+" php:
+let php_sql_heredoc = 0
+let php_html_in_heredoc = 0
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+
