@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# turn lamp on or off
+case $1 in
+  on ) 
+    sudo service apache2 start;
+    sudo service mysql start;;
+  off )
+    sudo service apache2 stop;
+    sudo service mysql stop;;
+  *) echo -e 'must clap on or clap off!';;
+esac
