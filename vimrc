@@ -116,4 +116,7 @@ let php_sql_heredoc = 0
 let php_html_in_heredoc = 0
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-
+augroup SmartyHTML
+  autocmd!
+  autocmd Filetype smarty set filetype=smarty.html
+augroup END
