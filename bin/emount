@@ -1,0 +1,4 @@
+#!/bin/bash
+NAME="secure$RANDOM"
+sudo cryptsetup luksOpen $1 $NAME -c aes-xts -s 256 -h sha512
+echo "mounted under $NAME"
