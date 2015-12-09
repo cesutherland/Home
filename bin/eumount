@@ -1,3 +1,7 @@
 #!/bin/bash
-sudo cryptsetup luksClose $1
-
+if [ -z "$1" ]
+then
+  ls -alh /dev/mapper
+else
+  sudo cryptsetup luksClose $1
+fi
