@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
-sudo rsync -avHPn --fuzzy --delete-after $1 $2
+sudo rsync -avHP --fuzzy --delete-after --dry-run $1 $2
 echo "THIS WAS JUST A TEST"
