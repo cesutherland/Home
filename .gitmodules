@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-php"]
 	path = vim/bundle/vim-php
 	url = git@github.com:StanAngeloff/php.vim.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
