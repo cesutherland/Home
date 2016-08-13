@@ -1,0 +1,2 @@
+#!/bin/bash
+ls | grep $@ | xargs -I{} sh -c 'echo Pulling {}...; git -C {} pull'
