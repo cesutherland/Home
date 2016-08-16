@@ -1,2 +1,9 @@
 #!/bin/bash
-ls | grep $@ | xargs -I{} sh -c 'echo Pulling {}...; git -C {} pull'
+HELP="-h"
+ARG="$@"
+if [ "$ARG" = "$HELP" ] || [ "$ARG" = "" ];
+then
+  echo -e "Pull it all: gpull '.'\nOr pull some of it: gpull 'gib\|calendar'"
+else
+  ls | grep $@ | xargs -I{} sh -c 'echo Pulling {}...; git -C {} pull'
+fi
