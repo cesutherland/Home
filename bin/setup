@@ -2,7 +2,7 @@
 
 # Setup ubuntu sytems
 sudo add-apt-repository multiverse
-sudo apt-get install aptitude git ack-grep vim tmux firefox chromium-browser virtualbox keepass2 ssh curl g++ redshift libnotify-bin sqlite postgresql steam vlc mplayer mpv
+sudo apt-get install aptitude git ack-grep vim tmux firefox chromium-browser virtualbox keepass2 ssh curl g++ redshift libnotify-bin sqlite postgresql steam vlc mplayer mpv usb-creator-kde
 
 # Spotify:
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
