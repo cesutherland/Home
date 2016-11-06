@@ -1,5 +1,14 @@
 #!/bin/bash
+# Create encrypted devices with:
+#
+# sudo cryptsetup --verify-passphrase luksFormat /dev/sdXX -c aes-xts-plain -s 256 -h sha512
+# emount /dev/sdXX
+# sudo mkfs -t ext4 -m 1 -O dir_index,filetype,sparse_super /dev/mapper/secureXXXXX
+# sudo e2label /dev/mapper/secureXXXXX DeviceLabel
+#
+
 set -e
+
 NAME="secure$RANDOM"
 sudo cryptsetup luksOpen $1 $NAME -c aes-xts-plain -s 256 -h sha512
 echo "mounted under $NAME"
