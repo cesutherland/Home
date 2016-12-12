@@ -205,8 +205,8 @@ rvm_path="$HOME/.rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # NVM
-[[ -s ~/Source/nvm/nvm.sh ]] && source ~/Source/nvm/nvm.sh # Old place
-[[ -s ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh # New place
+export NVM_DIR="/home/carl/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Local
 export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
