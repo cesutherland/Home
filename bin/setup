@@ -30,7 +30,7 @@ sudo apt-get install \
   mysql-workbench
 
 # Laptop:
-# sudo apt-get install powertop a2ps
+# sudo apt-get install powertop a2ps acpi
 
 # Spotify:
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
