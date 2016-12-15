@@ -27,7 +27,8 @@ sudo apt-get install \
   python-gtk2 \
   build-essential \
   libssl-dev \
-  mysql-workbench
+  mysql-workbench \
+  jq
 
 # Laptop:
 # sudo apt-get install powertop a2ps acpi
