@@ -20,9 +20,9 @@
   new = green bold
 [color "diff-highlight"]
   oldNormal = red bold
-  oldHighlight = red bold reverse
+  oldHighlight = red red bold
   newNormal = green bold
-  newHighlight = green bold reverse
+  newHighlight = green green bold
 [color "branch"]
   current = yellow bold
   local = yellow bold
