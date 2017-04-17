@@ -1,0 +1,4 @@
+#!/bin/bash
+
+SRCDIR=/home/carl/Projects/acuity;
+sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@;
