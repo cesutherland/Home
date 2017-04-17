@@ -4,11 +4,30 @@
 [user]
 	name = Carl Sutherland
 	email = carl@humblesoftware.com
-[color]
-	diff = auto
-	status = auto
-	branch = auto
 [format]
 	pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [push]
 	default = simple
+[interactive]
+	diffFilter = diff-highlight
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[color "diff"]
+  frag = cyan bold
+  old = red bold
+  new = green bold
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold reverse
+  newNormal = green bold
+  newHighlight = green bold reverse
+[color "branch"]
+  current = yellow bold
+  local = yellow bold
+  remote = yellow bold
+[color "status"]
+  added = green bold
+  changed = green bold
+  untracked = cyan bold
