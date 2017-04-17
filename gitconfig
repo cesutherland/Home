@@ -28,6 +28,7 @@
   local = yellow bold
   remote = yellow bold
 [color "status"]
+  branch = yellow bold
   added = green bold
   changed = red bold
   untracked = red bold
