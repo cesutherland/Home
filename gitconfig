@@ -29,5 +29,5 @@
   remote = yellow bold
 [color "status"]
   added = green bold
-  changed = green bold
-  untracked = cyan bold
+  changed = red bold
+  untracked = red bold
