@@ -4,8 +4,25 @@ ACTION=${1-"run"}
 SRCDIR=/home/carl/Projects/acuity
 : {$ACUITY_NAME:=acuity_dev}
 
-if [ "$ACTION" == "log" ]; then
-  sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
-else
-  sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@
-fi
+shift
+QUOTED_PARAMS=''
+for i in "$@"; do
+  case "$i" in
+    *\'*)
+      i=`printf "%s" "$i" | sed "s/'/'\"'\"'/g"`
+      ;;
+    *) : ;;
+  esac
+  QUOTED_PARAMS="$QUOTED_PARAMS '$i'"
+done
+
+case "$ACTION" in
+  log)
+    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+    ;;
+  test)
+    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "source ~/.bashrc; ./tests/api/run $QUOTED_PARAMS" 
+    ;;
+  *)
+    sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@
+esac
