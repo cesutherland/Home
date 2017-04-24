@@ -1,4 +1,11 @@
 #!/bin/bash
 
-SRCDIR=/home/carl/Projects/acuity;
-sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@;
+ACTION=${1-"run"}
+SRCDIR=/home/carl/Projects/acuity
+: {$ACUITY_NAME:=acuity_dev}
+
+if [ "$ACTION" == "log" ]; then
+  sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+else
+  sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@
+fi
