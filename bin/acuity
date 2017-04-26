@@ -2,7 +2,7 @@
 
 ACTION=${1-"run"}
 SRCDIR=/home/carl/Projects/acuity
-: {$ACUITY_NAME:=acuity_dev}
+: ${ACUITY_NAME:='acuity-dev'}
 
 shift
 QUOTED_PARAMS=''
