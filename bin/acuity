@@ -18,11 +18,18 @@ done
 
 case "$ACTION" in
   log)
-    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+#    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+    # sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+    cd  ~/Projects/acuity-images
+    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
     ;;
   test)
     sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "source ~/.bashrc; ./tests/api/run $QUOTED_PARAMS" 
     ;;
+  exec)
+    cd  ~/Projects/acuity-images
+    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash
+    ;;
   *)
-    sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $@
+    sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $ACTION $@
 esac
