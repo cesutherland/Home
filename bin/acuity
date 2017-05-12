@@ -32,4 +32,5 @@ case "$ACTION" in
     ;;
   *)
     sudo SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $ACTION $@
+    ;;
 esac
