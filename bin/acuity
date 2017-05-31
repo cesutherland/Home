@@ -9,7 +9,7 @@ case "$ACTION" in
 #    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
     # sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
     cd  ~/Projects/acuity-images
-    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
+    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\\n/\n/g; s/\\\t/\ \ /g'"
     ;;
   exec)
     cd  ~/Projects/acuity-images
