@@ -16,6 +16,6 @@ case "$ACTION" in
     sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash
     ;;
   *)
-    sudo ACUITY_NAME=$ACUITY_NAME SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh $ACTION "$@"
+    sudo ACUITY_NAME=$ACUITY_NAME SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh "$@"
     ;;
 esac
