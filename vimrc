@@ -58,6 +58,7 @@ map <C-l> <C-w>l
 
 " mouse
 set mouse=a
+set ttymouse=sgr
 
 map <Leader>gs :Git status 
 map <Leader>gc :Git commit 
