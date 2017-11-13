@@ -4,18 +4,4 @@ ACTION=${1-"run"}
 SRCDIR=/home/carl/Projects/acuity
 : ${ACUITY_NAME:='acuityimages_web_1'}
 
-case "$ACTION" in
-  log)
-#    sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
-    # sudo docker exec -i -t $ACUITY_NAME /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\n/\n/g; s/\\t/\ \ /g'"
-    cd  ~/Projects/acuity-images
-    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash -c "tail -f /var/log/httpd/error_log | grep --line-buffered -Ev '(PHP Notice|AMQPRuntimeException)' | sed 's/\\\n/\n/g; s/\\\t/\ \ /g'"
-    ;;
-  exec)
-    cd  ~/Projects/acuity-images
-    sudo SRCDIR=$SRCDIR docker-compose exec web /bin/bash
-    ;;
-  *)
-    sudo ACUITY_NAME=$ACUITY_NAME SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh "$@"
-    ;;
-esac
+sudo ACUITY_NAME=$ACUITY_NAME SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh "$@"
