@@ -225,6 +225,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias ga='git add'
 alias gp='git push'
+alias gitrm='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias tma='tmux attach -d -t'
 # alias vim='vim -X'
 
