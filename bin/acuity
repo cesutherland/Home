@@ -1,7 +1,3 @@
 #!/bin/bash
 
-ACTION=${1-"run"}
-SRCDIR=/home/carl/Projects/acuity
-: ${ACUITY_NAME:='acuityimages_web_1'}
-
-sudo ACUITY_NAME=$ACUITY_NAME SRCDIR=$SRCDIR ~/Projects/acuity-images/run.sh "$@"
+~/Projects/acuity/docker/development.sh "$@"
