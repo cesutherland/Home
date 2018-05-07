@@ -207,6 +207,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # NVM
 export NVM_DIR="/home/carl/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Local
 export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
