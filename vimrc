@@ -116,6 +116,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 let php_sql_heredoc = 0
 let php_html_in_heredoc = 0
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 augroup SmartyHTML
   autocmd!

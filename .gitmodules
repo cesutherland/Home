@@ -49,3 +49,12 @@
 [submodule "vim/bundle/vim-vue"]
 	path = vim/bundle/vim-vue
 	url = https://github.com/posva/vim-vue.git
+[submodule "vim/bundle/vmustache"]
+	path = vim/bundle/vmustache
+	url = https://github.com/tobyS/vmustache.git
+[submodule "vim/bundle/pdv"]
+	path = vim/bundle/pdv
+	url = https://github.com/tobyS/pdv.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
