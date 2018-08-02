@@ -96,6 +96,10 @@ colorscheme deleklocal
 " fix backspace
 set backspace=indent,eol,start
 
+" don't fix end of line
+set nofixendofline
+
+" format JSON
 function! FormatJSON()
   :%! python -m json.tool
   :%s/\ \ \ \ /  /g
