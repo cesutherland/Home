@@ -108,7 +108,7 @@ command JSON call FormatJSON()
 
 " CtrlP
 let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor'
 map ; :CtrlPBuffer<CR>
 
 " Syntastic
