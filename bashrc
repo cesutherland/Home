@@ -187,10 +187,10 @@ function parse_git_branch {
     branch="$remote\001\033[1;34m\002/\001\033[1;33m\002$branch"
   fi
 
-  [[ $branch ]] && echo -e "[\001\033[1;33m\002$branch$(parse_git_dirty)$(parse_git_unpushed)\001\033[0m\002] "
+  [[ $branch ]] && echo -e "[\001\033[1;33m\002$branch$(parse_git_dirty)$(parse_git_unpushed)\001\033[0m\002]"
 }
 
-export PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)$ '
+export PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)\n$ '
 
 print_pre_prompt () 
 { 
