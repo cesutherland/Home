@@ -212,6 +212,7 @@ export NVM_DIR="/home/carl/.nvm"
 # Local
 export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
 export PATH=$PATH:$HOME/.bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/.composer/vendor/bin 
 
 # VI
 set -o vi
