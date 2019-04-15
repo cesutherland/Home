@@ -115,13 +115,16 @@ map ; :CtrlPBuffer<CR>
 "let g:syntastic_javascript_jshint_exec = '/home/carl/local/bin/jshint'
 " let g:syntastic_jshint_exec = '/home/carl/local/bin/jshint'
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_php_checkers = ['php']
 
 " php:
 let php_sql_heredoc = 0
 let php_html_in_heredoc = 0
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+nnoremap <silent> <Leader>h :<C-u>call pdv#DocumentWithSnip()<CR>
+" autocmd FileType php setlocal binary noeol omnifunc=phpcomplete#CompletePHP
+" autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
 augroup SmartyHTML
   autocmd!
