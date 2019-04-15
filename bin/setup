@@ -29,7 +29,9 @@ sudo apt-get install \
   build-essential \
   libssl-dev \
   mysql-workbench \
-  jq
+  jq \
+  gufw
+
 
 # Laptop:
 # sudo apt-get install powertop a2ps acpi
