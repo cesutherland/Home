@@ -14,6 +14,10 @@ set shiftwidth=2
 set expandtab
 set nowrap
 
+" disable modelines for security
+set modelines=0
+set nomodeline
+
 set wildmode=longest,list,full
 set wildmenu
 
