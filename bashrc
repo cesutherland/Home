@@ -159,7 +159,7 @@ function parse_git_unpushed {
     # No remote
     echo -e "\001\033[1;31m\002\xE2\x9C\xAA"
   else
-    local pushed=$(git branch -v | grep $branch)
+    local pushed=$(git branch -v | grep "^* $branch")
     if [[ $pushed =~ ("[ahead "([[:digit:]]*)]) ]]
     then
       # Unpushed
