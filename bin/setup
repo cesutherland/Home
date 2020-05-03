@@ -25,10 +25,9 @@ sudo apt-get install \
   mplayer \
   mpv \
   usb-creator-kde \
-  python-gtk2 \
+  python-is-python3 \
   build-essential \
   libssl-dev \
-  mysql-workbench \
   jq \
   gufw
 
