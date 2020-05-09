@@ -62,7 +62,9 @@ map <C-l> <C-w>l
 
 " mouse
 set mouse=a
-set ttymouse=sgr
+if exists('+ttymouse') " not used in nvim
+  set ttymouse=sgr
+endif
 
 map <Leader>gs :Git status 
 map <Leader>gc :Git commit 
