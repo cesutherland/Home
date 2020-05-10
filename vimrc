@@ -120,7 +120,7 @@ map ; :CtrlPBuffer<CR>
 " Syntastic
 "let g:syntastic_javascript_jshint_exec = '/home/carl/local/bin/jshint'
 " let g:syntastic_jshint_exec = '/home/carl/local/bin/jshint'
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_php_checkers = ['php']
 
 " php:
