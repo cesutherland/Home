@@ -218,6 +218,11 @@ export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
 export PATH=$PATH:$HOME/.bin:$HOME/.local/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin 
 
+# neovim
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+fi
+
 # VI
 set -o vi
 EDITOR=/usr/bin/vim
@@ -233,7 +238,6 @@ alias ga='git add'
 alias gp='git push'
 alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 alias tma='tmux attach -d -t'
-# alias vim='vim -X'
 
 function ackr () {
   ack "$1" -l | xargs perl -pi -E "$2"
