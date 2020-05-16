@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-blade"]
 	path = vim/bundle/vim-blade
 	url = git://github.com/jwalton512/vim-blade.git
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
