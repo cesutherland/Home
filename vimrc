@@ -105,6 +105,10 @@ set backspace=indent,eol,start
 " don't fix end of line
 set nofixendofline
 
+" case insensitive completion
+set ignorecase
+set infercase
+
 " format JSON
 function! FormatJSON()
   :%! python -m json.tool
