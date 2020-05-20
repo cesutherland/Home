@@ -5,6 +5,7 @@
 [user]
 	name = Carl Sutherland
 	email = carl@humblesoftware.com
+	signingkey = E3DCD3CB83920273
 [format]
 	pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [push]
@@ -31,3 +32,5 @@
   added = green bold
   changed = red bold
   untracked = red bold
+[commit]
+  gpgsign = true
