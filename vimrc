@@ -140,3 +140,8 @@ augroup SmartyHTML
   autocmd!
   autocmd Filetype smarty set filetype=smarty.html
 augroup END
+
+" vim-ack:
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
