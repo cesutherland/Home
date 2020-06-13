@@ -6,6 +6,7 @@ sudo apt-get install \
   aptitude \
   git \
   ack-grep \
+  silversearcher-ag \
   vim \
   vim-gtk \
   tmux \
