@@ -235,6 +235,7 @@ EDITOR=/usr/bin/vim
 source ~/.bin/tmuxinator.bash
 
 # Aliases
+alias shit='git'
 alias gits='git status'
 alias gc='git commit'
 alias gd='git diff'
