@@ -1,7 +1,7 @@
 set t_Co=256
 
 set formatoptions=tcroqw
-
+set updatetime=200
 set number
 set titlestring=%f
 set title
