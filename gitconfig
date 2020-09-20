@@ -5,7 +5,7 @@
 [user]
 	name = Carl Sutherland
 	email = carl@humblesoftware.com
-	signingkey = E3DCD3CB83920273
+	signingkey = B2B5DC3118E4744E
 [format]
 	pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [push]
