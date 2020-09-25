@@ -76,3 +76,6 @@
 [submodule "Pictures"]
 	path = Pictures
 	url = git@github.com:cesutherland/Pictures.git
+[submodule "vim/bundle/coc"]
+	path = vim/bundle/coc
+	url = git@github.com:neoclide/coc.nvim.git
