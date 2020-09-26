@@ -145,3 +145,9 @@ augroup END
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" coc
+function InstallCompletion()
+  :CocInstall coc-json coc-tsserver
+endfunction
+command InstallCompletion call InstallCompletion()
