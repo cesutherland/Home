@@ -76,3 +76,6 @@
 [submodule "vim/bundle/coc"]
 	path = vim/bundle/coc
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git@github.com:preservim/nerdtree.git
