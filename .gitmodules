@@ -55,9 +55,6 @@
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = https://github.com/tobyS/pdv.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/bundle/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
