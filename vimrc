@@ -163,3 +163,5 @@ endfunction
 
 " airline
 let g:airline_section_a=''
+let g:airline_powerline_fonts = 1
+
