@@ -30,7 +30,8 @@ sudo apt-get install \
   build-essential \
   libssl-dev \
   jq \
-  gufw
+  gufw \
+  fonts-powerline
 
 
 # Laptop:
