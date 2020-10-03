@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/bundle/vim-typescript"]
+	path = vim/bundle/vim-typescript
+	url = git@github.com:leafgarland/typescript-vim.git
