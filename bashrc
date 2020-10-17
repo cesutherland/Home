@@ -160,24 +160,23 @@ function parse_git_unpushed {
   local remote=`get_git_remote`
   if [[ "$remote" == "" ]]; then
     # No remote
-    echo -e "\001\033[1;31m\002\xE2\x9C\xAA"
+    echo -e "\001\033[1;31m\002✪"
   else
     local pushed=$(git branch -v | grep "^* $branch")
     if [[ $pushed =~ ("[ahead "([[:digit:]]*)]) ]]
     then
       # Unpushed
-      # echo -e "\001\033[1;31m\002\xE2\x9A\xA1\001\033[0m\002"
-      echo -e "\001\033[1;31m\002\xE2\x86\x91\001\033[0m\002"
+      echo -e "\001\033[1;31m\002↑\001\033[0m\002"
     else
       # Pushed
-      echo -e "\001\033[1;32m\002\xE2\x9D\x80\001\033[0m\002"
+      echo -e "\001\033[1;32m\002❀\001\033[0m\002"
     fi
   fi
 }
 
 parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
-    echo -e "\001\033[1;31m\002\xE2\x9C\x97\001\033[0m\002"
+    echo -e "\001\033[1;31m\002✗\001\033[0m\002"
   else
     local thing=1
   fi
