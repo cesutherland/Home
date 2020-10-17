@@ -166,17 +166,20 @@ function parse_git_unpushed {
     if [[ $pushed =~ ("[ahead "([[:digit:]]*)]) ]]
     then
       # Unpushed
-      echo -e "\001\033[1;31m\002↑\001\033[0m\002"
+      # echo -e "\001\033[1;31m\002↑\001\033[0m\002"
+      echo -e "🌱"
     else
       # Pushed
-      echo -e "\001\033[1;32m\002❀\001\033[0m\002"
+      # echo -e "\001\033[1;32m\002❀\xE2\x80\x89\001\033[0m\002"
+      echo -e "🌼"
     fi
   fi
 }
 
 parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
-    echo -e "\001\033[1;31m\002✗\001\033[0m\002"
+    # echo -e "\001\033[1;31m\002✗\001\033[0m\002"
+    echo -e "⚡"
   else
     local thing=1
   fi
@@ -190,10 +193,11 @@ function parse_git_branch {
     branch="$remote\001\033[1;34m\002/\001\033[1;33m\002$branch"
   fi
 
-  [[ $branch ]] && echo -e "[\e[1;33m$branch$(parse_git_dirty)$(parse_git_unpushed)\001\033[0m\002]"
+  [[ $branch ]] && echo -e "\e[1;33m $branch\001\033[0m\002 $(parse_git_dirty)$(parse_git_unpushed)"
+  #║┃•∙
 }
 
-export PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)\n$ '
+PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)\n$ '
 
 print_pre_prompt () 
 { 
