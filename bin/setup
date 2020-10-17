@@ -32,6 +32,7 @@ sudo apt-get install \
   jq \
   gufw \
   fonts-firacode \
+  fonts-emojione \
   fonts-powerline
 
 
