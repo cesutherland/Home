@@ -180,8 +180,6 @@ parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
     # echo -e "\001\033[1;31m\002✗\001\033[0m\002"
     echo -e "⚡"
-  else
-    local thing=1
   fi
 }
 
@@ -199,11 +197,6 @@ function parse_git_branch {
 
 PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)\n$ '
 
-print_pre_prompt () 
-{ 
-    printf "%*s\r" $COLUMNS "$USER@$HOSTNAME"
-}
-#PROMPT_COMMAND=print_pre_prompt
 
 
 # RVM
