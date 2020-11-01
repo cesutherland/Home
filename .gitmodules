@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-typescript"]
 	path = vim/bundle/vim-typescript
 	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "vim/bundle/vim-jsx-pretty"]
+	path = vim/bundle/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
