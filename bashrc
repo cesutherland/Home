@@ -203,7 +203,7 @@ PS1='\u@\h \[\e[1;34m\]\w\[\e[m\] $(parse_git_branch)\n$ '
 # RVM
 rvm_path="$HOME/.rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/bin" ]] && export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # NVM
 export NVM_DIR="/home/carl/.nvm"
@@ -215,7 +215,6 @@ export PY_USER_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PY_USER_BIN:$PATH
 
 # Local
-export PATH=$HOME/local/bin:$HOME/Source/android-sdk-linux/platform-tools:$PATH
 export PATH=$PATH:$HOME/.bin:$HOME/.local/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin 
 
