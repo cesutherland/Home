@@ -95,7 +95,8 @@ set fillchars=vert:\│
 syntax on
 
 " color scheme
-colorscheme deleklocal
+set termguicolors
+colorscheme gruvbox
 
 " fix backspace
 set backspace=indent,eol,start
