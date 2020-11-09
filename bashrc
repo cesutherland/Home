@@ -244,3 +244,6 @@ alias tma='tmux attach -d -t'
 function ackr () {
   ack "$1" -l | xargs perl -pi -E "$2"
 }
+
+# Squarespace
+[[ -s ~/Projects/kubectl-plugins ]] && export PATH=$PATH:~/Projects/kubectl-plugins
