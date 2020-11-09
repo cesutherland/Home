@@ -244,5 +244,8 @@ function ackr () {
   ack "$1" -l | xargs perl -pi -E "$2"
 }
 
+# k8s
+[[ -s $HOME/.kube/completion.bash.inc ]] && source "$HOME/.kube/completion.bash.inc"
+
 # Squarespace
 [[ -s ~/Projects/kubectl-plugins ]] && export PATH=$PATH:~/Projects/kubectl-plugins
