@@ -246,6 +246,7 @@ function ackr () {
 
 # k8s
 [[ -s $HOME/.kube/completion.bash.inc ]] && source "$HOME/.kube/completion.bash.inc"
+alias k='kubectl'
 
 # Squarespace
 [[ -s ~/Projects/kubectl-plugins ]] && export PATH=$PATH:~/Projects/kubectl-plugins
