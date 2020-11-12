@@ -164,7 +164,7 @@ function parse_git_unpushed {
     echo -e "❌"
   else
     local pushed=$(git branch -v | grep "^* $branch")
-    if [[ $pushed =~ ("[ahead "([[:digit:]]*)]) ]]
+    if [[ $pushed =~ ("[ahead "([[:digit:]]*).*]) ]]
     then
       # Unpushed
       # echo -e "\001\033[1;31m\002↑\001\033[0m\002"
