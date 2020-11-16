@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule "vim/bundle/vim-ack"]
-	path = vim/bundle/vim-ack
-	url = https://github.com/mileszs/ack.vim
 [submodule "vim/bundle/vim-numbers"]
 	path = vim/bundle/vim-numbers
 	url = git://github.com/myusuf3/numbers.vim.git
