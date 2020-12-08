@@ -121,6 +121,7 @@ command JSON call FormatJSON()
 " CtrlP
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor'
+let g:ctrlp_switch_buffer = 0
 map ; :CtrlPBuffer<CR>
 
 " Syntastic
