@@ -40,7 +40,13 @@ sudo apt-get install \
   shellcheck
 
 # Dev:
-sudo apt install docker-compose
+sudo apt install \
+  docker \
+  docker-compose
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
 
 # Laptop:
 # sudo apt-get install powertop a2ps acpi
