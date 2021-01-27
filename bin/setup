@@ -37,12 +37,13 @@ sudo apt-get install \
   fonts-firacode \
   fonts-emojione \
   fonts-powerline \
-  shellcheck
+  shellcheck \
+  watchman
 
-# Dev:
+# Docker:
 sudo apt install \
   docker \
-  docker-compose
+  docker-compose \
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
