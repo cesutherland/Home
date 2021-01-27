@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-mdx-js"]
 	path = vim/bundle/vim-mdx-js
 	url = git@github.com:jxnblk/vim-mdx-js.git
+[submodule "vim/bundle/vim-node"]
+	path = vim/bundle/vim-node
+	url = https://github.com/moll/vim-node
