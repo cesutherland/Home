@@ -166,6 +166,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" coc-renaming
+nmap <leader>rn <Plug>(coc-rename)
+
 " airline
 let g:airline_section_a=''
 let g:airline_powerline_fonts = 1
