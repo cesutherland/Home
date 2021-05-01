@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
 	url = https://github.com/moll/vim-node
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git@github.com:tpope/vim-surround.git
