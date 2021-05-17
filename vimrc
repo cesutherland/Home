@@ -151,7 +151,7 @@ endif
 
 " coc
 function InstallCompletion()
-  :CocInstall coc-json coc-tsserver
+  :CocInstall coc-json coc-tsserver coc-java
 endfunction
 command InstallCompletion call InstallCompletion()
 
