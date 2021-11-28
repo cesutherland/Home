@@ -250,3 +250,7 @@ alias k='kubectl'
 
 # Squarespace
 [[ -s ~/Projects/kubectl-plugins ]] && export PATH=$PATH:~/Projects/kubectl-plugins
+
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
