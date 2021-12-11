@@ -38,7 +38,8 @@ sudo apt-get install \
   fonts-emojione \
   fonts-powerline \
   shellcheck \
-  watchman
+  watchman \
+  acpi
 
 # Docker:
 sudo apt install \
