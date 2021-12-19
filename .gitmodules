@@ -13,9 +13,6 @@
 [submodule "vim/bundle/vim-numbers"]
 	path = vim/bundle/vim-numbers
 	url = git://github.com/myusuf3/numbers.vim.git
-[submodule "vim/bundle/vim-pig"]
-	path = vim/bundle/vim-pig
-	url = git://github.com/jorgeramirez/vim-pig.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
