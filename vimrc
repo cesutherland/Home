@@ -144,6 +144,9 @@ augroup SmartyHTML
   autocmd Filetype smarty set filetype=smarty.html
 augroup END
 
+" MDX/markdown
+let g:vim_markdown_math = 1
+
 " vim-ack:
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
