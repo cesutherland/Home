@@ -242,8 +242,13 @@ alias gc='git commit'
 alias gd='git diff'
 alias ga='git add'
 alias gp='git push'
-alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 alias tma='tmux attach -d -t'
+
+function gclean() {
+  BRANCH="${1:-master}"
+  echo $BRANCH
+  git branch --merged $BRANCH | grep -v "\* $BRANCH" | xargs -n 1 git branch -d
+}
 
 function ackr () {
   ack "$1" -l | xargs perl -pi -E "$2"
