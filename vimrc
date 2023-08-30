@@ -189,6 +189,9 @@ endif
 " coc-renaming
 nmap <leader>rn <Plug>(coc-rename)
 
+nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gds :call CocAction('jumpDefinition', 'vsplit')
+
 " airline
 let g:airline_section_a=''
 let g:airline_powerline_fonts = 1
