@@ -94,3 +94,6 @@
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
 	url = git@github.com:vim-vdebug/vdebug.git
+[submodule "vim/bundle/vim-jsonnet"]
+	path = vim/bundle/vim-jsonnet
+	url = git@github.com:google/vim-jsonnet.git
