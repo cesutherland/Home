@@ -267,3 +267,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Rust
 . "$HOME/.cargo/env"
+
+# go
+export PATH=$PATH:/usr/local/go/bin
