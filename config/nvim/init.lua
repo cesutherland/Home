@@ -27,6 +27,9 @@ require("lazy").setup({
     -- add your plugins here
     {
       "tpope/vim-fugitive"
+    },
+    {
+      "godlygeek/tabular"
     }
   },
   -- Configure any other settings here. See the documentation for more details.
