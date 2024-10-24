@@ -66,10 +66,19 @@ require("lazy").setup({
     {
       "godlygeek/tabular"
     },
+    {
+      "ellisonleao/gruvbox.nvim", opts = {
+        italic = {
+          strings = false
+        }
+      }
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "delek" } },
+  install = { },
   -- automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
+
+vim.cmd("colorscheme gruvbox")
