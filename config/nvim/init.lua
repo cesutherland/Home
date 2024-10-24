@@ -1,3 +1,12 @@
+-- Local config
+local o = vim.opt;
+
+o.autoindent     = true     -- uses the indent from the previous line
+o.tabstop        = 2        -- number of columns occupied by a tab
+o.softtabstop    = 2        -- see multiple spaces as tabstops
+o.shiftwidth     = 2        -- width for autoindents
+o.expandtab      = true     -- converts tabs to white space
+
 -- Mappings
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
