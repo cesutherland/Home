@@ -22,7 +22,7 @@ autocmd("InsertLeave", {
   command = "set relativenumber"
 });
 
--- Git Mappings
+-- Git mappings
 map('n',  '<Leader>gs',  ':Git status ',  mapOptions)
 map('n',  '<Leader>gc',  ':Git commit ',  mapOptions)
 map('n',  '<Leader>ga',  ':Git add ',     mapOptions)
@@ -32,6 +32,11 @@ map('n',  '<Leader>gd',  ':Git diff ',    mapOptions)
 map('n',  ',,',  ':tabnew<CR>',   mapOptions)
 map('n',  ',.',  ':tabnext<CR>',  mapOptions)
 map('n',  '.,',  ':tabpre<CR>',   mapOptions)
+
+-- Fuzzy file completion mappings
+map('n', '<Leader>ff', ':Telescope find_files<CR>', mapOptions)
+map('n', '<Leader>fg', ':Telescope live_grep<CR>', mapOptions)
+map('n', ';', ':Telescope buffers<CR>', mapOptions)
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -76,6 +81,10 @@ require("lazy").setup({
     {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+      'nvim-telescope/telescope.nvim', branch = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
     }
   },
   -- Configure any other settings here. See the documentation for more details.
