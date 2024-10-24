@@ -85,6 +85,10 @@ require("lazy").setup({
     {
       'nvim-telescope/telescope.nvim', branch = '0.1.x',
       dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+      'neoclide/coc.nvim',
+      build = 'npm ci'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -102,3 +106,5 @@ require('lualine').setup({
     lualine_a = {}
   }
 })
+
+require 'coc'
