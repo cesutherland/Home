@@ -1,20 +1,33 @@
--- Local config
 local o = vim.opt;
+local autocmd = vim.api.nvim_create_autocmd;
+local map = vim.api.nvim_set_keymap
 
+-- Local config
 o.autoindent     = true     -- uses the indent from the previous line
 o.tabstop        = 2        -- number of columns occupied by a tab
 o.softtabstop    = 2        -- see multiple spaces as tabstops
 o.shiftwidth     = 2        -- width for autoindents
 o.expandtab      = true     -- converts tabs to white space
 
--- Mappings
-local map = vim.api.nvim_set_keymap
-local options = { noremap = true }
+-- Line numbers
+o.number = true
+o.relativenumber = true;
+autocmd("InsertEnter", {
+  pattern = {"*"},
+  command = "set norelativenumber"
+});
+autocmd("InsertLeave", {
+  pattern = {"*"},
+  command = "set relativenumber"
+});
 
-map('n',  '<Leader>gs',  ':Git status ',  options)
-map('n',  '<Leader>gc',  ':Git commit ',  options)
-map('n',  '<Leader>ga',  ':Git add ',     options)
-map('n',  '<Leader>gd',  ':Git diff ',    options)
+-- Mappings
+local mapOptions = { noremap = true }
+
+map('n',  '<Leader>gs',  ':Git status ',  mapOptions)
+map('n',  '<Leader>gc',  ':Git commit ',  mapOptions)
+map('n',  '<Leader>ga',  ':Git add ',     mapOptions)
+map('n',  '<Leader>gd',  ':Git diff ',    mapOptions)
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
