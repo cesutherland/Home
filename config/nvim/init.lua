@@ -1,6 +1,7 @@
 local o = vim.opt;
 local autocmd = vim.api.nvim_create_autocmd;
 local map = vim.api.nvim_set_keymap
+local mapOptions = { noremap = true }
 
 -- Local config
 o.autoindent     = true     -- uses the indent from the previous line
@@ -21,13 +22,16 @@ autocmd("InsertLeave", {
   command = "set relativenumber"
 });
 
--- Mappings
-local mapOptions = { noremap = true }
-
+-- Git Mappings
 map('n',  '<Leader>gs',  ':Git status ',  mapOptions)
 map('n',  '<Leader>gc',  ':Git commit ',  mapOptions)
 map('n',  '<Leader>ga',  ':Git add ',     mapOptions)
 map('n',  '<Leader>gd',  ':Git diff ',    mapOptions)
+
+-- Tabbed editing mappings
+map('n',  ',,',  ':tabnew<CR>',   mapOptions)
+map('n',  ',.',  ':tabnext<CR>',  mapOptions)
+map('n',  '.,',  ':tabpre<CR>',   mapOptions)
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
