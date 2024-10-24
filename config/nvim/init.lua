@@ -72,6 +72,10 @@ require("lazy").setup({
           strings = false
         }
       }
+    },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
     }
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -82,3 +86,10 @@ require("lazy").setup({
 })
 
 vim.cmd("colorscheme gruvbox")
+
+-- statusline
+require('lualine').setup({
+  sections = {
+    lualine_a = {}
+  }
+})
