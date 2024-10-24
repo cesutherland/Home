@@ -1,3 +1,12 @@
+-- Mappings
+local map = vim.api.nvim_set_keymap
+local options = { noremap = true }
+
+map('n',  '<Leader>gs',  ':Git status ',  options)
+map('n',  '<Leader>gc',  ':Git commit ',  options)
+map('n',  '<Leader>ga',  ':Git add ',     options)
+map('n',  '<Leader>gd',  ':Git diff ',    options)
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -30,7 +39,7 @@ require("lazy").setup({
     },
     {
       "godlygeek/tabular"
-    }
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
