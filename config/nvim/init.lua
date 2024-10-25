@@ -1,5 +1,6 @@
 local o = vim.opt;
-local autocmd = vim.api.nvim_create_autocmd;
+local autocmd = vim.api.nvim_create_autocmd
+local command = vim.api.nvim_create_user_command
 local map = vim.api.nvim_set_keymap
 local mapOptions = { noremap = true }
 
@@ -107,4 +108,8 @@ require('lualine').setup({
   }
 })
 
+-- lsp
 require 'coc'
+command('InstallCompletion', function()
+  vim.cmd('CocInstall coc-phpls coc-go coc-json coc-tsserver coc-java coc-lua')
+end, {})
