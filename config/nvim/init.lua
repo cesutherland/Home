@@ -95,6 +95,9 @@ require("lazy").setup({
     {
       'neoclide/coc.nvim',
       build = 'npm ci'
+    },
+    {
+      'fatih/vim-go'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
