@@ -35,9 +35,14 @@ map('n',  ',.',  ':tabnext<CR>',  mapOptions)
 map('n',  '.,',  ':tabpre<CR>',   mapOptions)
 
 -- Fuzzy file completion mappings
-map('n', '<Leader>ff', ':Telescope find_files<CR>', mapOptions)
-map('n', '<Leader>fg', ':Telescope live_grep<CR>', mapOptions)
-map('n', ';', ':Telescope buffers<CR>', mapOptions)
+map('n',  '<Leader>ff',  ':Telescope find_files<CR>',  mapOptions)
+map('n',  '<Leader>fg',  ':Telescope live_grep<CR>',   mapOptions)
+map('n',  ';',           ':Telescope buffers<CR>',     mapOptions)
+
+-- Quickfix list mappings
+map('n',  '<C-m>',  ':cprevious<CR>',  mapOptions);
+map('n',  '<C-n>',  ':cnext<CR>',      mapOptions);
+map('n',  '<C-c>',  ':cclose<CR>',     mapOptions);
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
