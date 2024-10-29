@@ -98,6 +98,9 @@ require("lazy").setup({
     },
     {
       'fatih/vim-go'
+    },
+    {
+      'kien/ctrlp.vim'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
