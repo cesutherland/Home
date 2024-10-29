@@ -4,6 +4,10 @@ local command = vim.api.nvim_create_user_command
 local map = vim.api.nvim_set_keymap
 local mapOptions = { noremap = true }
 
+-- Leaders
+vim.g.mapleader      = " "
+vim.g.maplocalleader = "\\"
+
 -- Local config
 o.autoindent     = true     -- uses the indent from the previous line
 o.tabstop        = 2        -- number of columns occupied by a tab
@@ -60,12 +64,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
