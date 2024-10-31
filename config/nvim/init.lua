@@ -15,6 +15,7 @@ o.softtabstop    = 2        -- see multiple spaces as tabstops
 o.shiftwidth     = 2        -- width for autoindents
 o.expandtab      = true     -- converts tabs to white space
 
+
 -- Line numbers
 o.number = true
 o.relativenumber = true;
@@ -47,6 +48,21 @@ map('n',  ';',           ':Telescope buffers<CR>',     mapOptions)
 map('n',  '<C-m>',  ':cprevious<CR>',  mapOptions);
 map('n',  '<C-n>',  ':cnext<CR>',      mapOptions);
 map('n',  '<C-c>',  ':cclose<CR>',     mapOptions);
+
+-- Vim-go mappings
+local function mapgo (mode, key, command, options)
+  autocmd('FileType', {
+    pattern = 'go',
+    callback = function()
+      map(mode, key, command, options)
+    end
+  })
+end
+mapgo('n', '<Leader>b', '<Plug>(go-build)', mapOptions);
+mapgo('n', '<Leader>r', '<Plug>(go-run)', mapOptions);
+mapgo('n', '<Leader>t', '<Plug>(go-test)', mapOptions);
+mapgo('n', '<Leader>c', '<Plug>(go-coverage-toggle)', mapOptions);
+mapgo('n', '<Leader>d', ':GoDecls<CR>', mapOptions);
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
