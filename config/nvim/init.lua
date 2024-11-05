@@ -89,6 +89,9 @@ require("lazy").setup({
       "tpope/vim-fugitive"
     },
     {
+      'tpope/vim-rhubarb'
+    },
+    {
       "godlygeek/tabular"
     },
     {
