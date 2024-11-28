@@ -1,7 +1,6 @@
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/carl/.gitignore_global
-	pager = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [user]
 	name = Carl Sutherland
 	email = carl@humblesoftware.com
