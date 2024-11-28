@@ -1,16 +1,3 @@
-alias vi=nvim
-alias vim=nvim
-alias gits='git status'
-alias gc='git commit'
-alias gd='git diff'
-alias ga='git add'
-alias gp='git push'
-alias tma='tmux attach -d -t'
-
-bindkey -v
-
-export GPG_TTY=$(tty)
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -115,3 +102,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias vi=nvim
+alias vim=nvim
+alias gits='git status'
+alias gc='git commit'
+alias gd='git diff'
+alias ga='git add'
+alias gp='git push'
+alias tma='tmux attach -d -t'
+
+bindkey -v
+
+export GPG_TTY=$(tty)
+
