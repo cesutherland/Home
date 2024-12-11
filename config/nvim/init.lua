@@ -118,6 +118,9 @@ require("lazy").setup({
     },
     {
       'kien/ctrlp.vim'
+    },
+    {
+      'google/vim-jsonnet'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
