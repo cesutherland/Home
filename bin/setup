@@ -7,11 +7,10 @@ sudo add-apt-repository multiverse
 sudo apt-get install \
   aptitude \
   git \
-  ack-grep \
+  ack \
   silversearcher-ag \
   neovim \
   vim \
-  vim-gtk \
   tmux \
   tmuxinator \
   firefox \
@@ -22,7 +21,6 @@ sudo apt-get install \
   g++ \
   redshift \
   libnotify-bin \
-  sqlite \
   postgresql \
   steam \
   vlc \
