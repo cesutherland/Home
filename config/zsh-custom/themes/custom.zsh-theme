@@ -10,18 +10,38 @@ my_host() {
 }
 
 # Unused –
-function my_git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  GIT_STATUS=$(git_prompt_status)
-  [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS"
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/} $ZSH_THEME_GIT_PROMPT_SUFFIX"
+function get_git_branch {
+  echo $(git rev-parse --abbrev-ref HEAD 2> /dev/null);
+}
+
+function get_git_remote {
+  echo $(git config --get branch.$branch.remote)
+}
+
+function parse_git_unpushed {
+  local branch=`get_git_branch`
+  local remote=`get_git_remote`
+  if [[ "$remote" == "" ]]; then
+    # No remote
+    echo -e "❌"
+  else
+    local pushed=$(git branch -v | grep "^* $branch")
+    if [[ $pushed =~ "\[ahead [0-9]*" ]]
+    then
+      # Unpushed
+      echo -e "🌱"
+    else
+      # Pushed
+      echo -e "🌼"
+    fi
+  fi
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}  "
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[red]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%} 🌼"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[red]%}✚%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[red]%}✹%{$reset_color%}"
@@ -30,6 +50,6 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[red]%}➜%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}═%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}✭%{$reset_color%}"
 
-PROMPT='%{$fg[white]%}%n$(my_host)%{$reset_color%} %{$fg_bold[blue]%}%4~%{$reset_color%} $(git_prompt_info)$(git_prompt_status)%{$reset_color%}
+PROMPT='%{$fg[white]%}%n$(my_host)%{$reset_color%} %{$fg_bold[blue]%}%4~%{$reset_color%} $(git_prompt_info)$(git_prompt_status)$(parse_git_unpushed)%{$reset_color%}
 $ '
 RPS1="${return_code}"
