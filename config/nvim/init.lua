@@ -136,6 +136,14 @@ vim.cmd("colorscheme gruvbox")
 require('lualine').setup({
   sections = {
     lualine_a = {}
+  },
+  inactive_sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 1
+      }
+    }
   }
 })
 
