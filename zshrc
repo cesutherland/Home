@@ -116,6 +116,8 @@ bindkey -v
 
 export GPG_TTY=$(tty)
 
+source ~/.secret
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/csutherland/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
