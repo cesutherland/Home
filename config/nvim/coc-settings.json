@@ -1,3 +1,6 @@
 {
-  "intelephense.environment.phpVersion": "8.3.0"
+  "intelephense.environment.phpVersion": "8.3.0",
+  "go.goplsEnv": {
+    "GOFLAGS": "-tags=e2e,integration"
+  }
 }
