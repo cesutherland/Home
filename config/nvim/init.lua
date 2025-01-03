@@ -15,6 +15,8 @@ o.softtabstop    = 2        -- see multiple spaces as tabstops
 o.shiftwidth     = 2        -- width for autoindents
 o.expandtab      = true     -- converts tabs to white space
 
+-- Autocomplete menu
+vim.g.wildmode = "longest:full"
 
 -- Line numbers
 o.number = true
