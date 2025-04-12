@@ -18,6 +18,13 @@ o.expandtab      = true     -- converts tabs to white space
 -- Autocomplete menu
 vim.g.wildmode = "longest:full"
 
+-- Autoread
+o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
+
 -- Line numbers
 o.number = true
 o.relativenumber = true;
