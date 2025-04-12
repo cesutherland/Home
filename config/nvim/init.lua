@@ -149,7 +149,8 @@ vim.cmd("colorscheme gruvbox")
 -- statusline
 require('lualine').setup({
   sections = {
-    lualine_a = {}
+    lualine_a = {},
+    lualine_b = {'diff', 'diagnostics'},
   },
   inactive_sections = {
     lualine_c = {
