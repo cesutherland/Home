@@ -116,7 +116,12 @@ require("lazy").setup({
     },
     {
       'nvim-telescope/telescope.nvim', branch = '0.1.x',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+      dependencies = { 'nvim-lua/plenary.nvim' },
+      opts = {
+        defaults = {
+          file_ignore_patterns = { "/vendor/", "/node_modules/" },
+        }
+      }
     },
     {
       'neoclide/coc.nvim',
