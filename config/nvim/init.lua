@@ -136,6 +136,9 @@ require("lazy").setup({
     },
     {
       'google/vim-jsonnet'
+    },
+    {
+      'hashivim/vim-terraform'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
