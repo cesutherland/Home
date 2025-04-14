@@ -120,7 +120,7 @@ require("lazy").setup({
       dependencies = { 'nvim-lua/plenary.nvim' },
       opts = {
         defaults = {
-          file_ignore_patterns = { "/vendor/", "/node_modules/" },
+          file_ignore_patterns = { "/vendor/", "/node_modules/", "docker/var/lib" },
         }
       }
     },
