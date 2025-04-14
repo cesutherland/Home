@@ -14,6 +14,7 @@ o.tabstop        = 2        -- number of columns occupied by a tab
 o.softtabstop    = 2        -- see multiple spaces as tabstops
 o.shiftwidth     = 2        -- width for autoindents
 o.expandtab      = true     -- converts tabs to white space
+o.swapfile       = false
 
 -- Autocomplete menu
 vim.g.wildmode = "longest:full"
