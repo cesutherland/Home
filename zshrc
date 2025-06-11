@@ -111,13 +111,25 @@ alias gd='git diff'
 alias ga='git add'
 alias gp='git push'
 alias tma='tmux attach -d -t'
+alias python3='python3.12'
 
 bindkey -v
 
 export GPG_TTY=$(tty)
 
 source ~/.secret
+export GOPROXY="https://$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD@artifactory.squarespace.net/artifactory/api/go/go/"
+export PATH=$PATH:/usr/local/go/bin:~/go/bin
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/csutherland/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
