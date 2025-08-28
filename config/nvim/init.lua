@@ -150,6 +150,9 @@ require("lazy").setup({
 
 vim.cmd("colorscheme gruvbox")
 
+-- jsonnet
+vim.g.jsonnet_fmt_on_save = 0
+
 -- statusline
 require('lualine').setup({
   sections = {
