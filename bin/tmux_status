@@ -76,8 +76,8 @@ sub print_battery_ioreg {
 
   #gather battery info
   my @info = split(/%?;?\s+/, $battery);
-  my $state = $info[3];
-  my $percent = $info[2];
+  my $state = $info[4];
+  my $percent = $info[3];
 
   #print a lightning when charging:
   my $decoration = '';
@@ -98,7 +98,7 @@ sub print_battery_status {
   my $spark = $sparks[POSIX::floor(0.0799 * $percent)];
 
   # color text when battery low
-  if ($state eq 'Discharging') {
+  if ($state eq 'discharging') {
     if ($percent <= 40) {
       print $colors{'yellow'};
     }

@@ -50,14 +50,33 @@ my ( $this_script, $parent_dir ) = fileparse( $this_script_fullpath );    # grab
 
 my @files = grep { !/($this_script|README)$/ } ( <$parent_dir*> );        # grab all files, except this script and any README;
 
+my @links;                                                                # pairs of [target, link_path] to create;
 for my $file ( @files ) {                                                 # look at each file/dir in CWD;
-    my $dotfile = $home . '/.' . basename( $file );                       # concatenate fullpath to symlink for dotfile;
+    if ( basename( $file ) eq 'config' and -d $file ) {                   # special-case: link contents of config/ into ~/.config/;
+        my $config_dir = $home . '/.config';
+        unless ( -d $config_dir ) {                                       # ensure ~/.config exists;
+            if ( $dryrun ) {
+                say "Would like to create directory: '$config_dir'";
+            }
+            else {
+                mkdir $config_dir or warn "Could not create $config_dir: $!";
+            }
+        }
+        push @links, [ $_, $config_dir . '/' . basename( $_ ) ] for ( <$file/*> );
+    }
+    else {
+        push @links, [ $file, $home . '/.' . basename( $file ) ];
+    }
+}
+
+for my $pair ( @links ) {                                                 # create each symlink;
+    my ( $target, $dotfile ) = @$pair;
 
     if ( $nuclear ) {                                                     # if user requested Clobberbane;
         unlink $dotfile if -e $dotfile and not $dryrun;                   # nuke that pre-existing file;
     }
 
-    say "Would like to create symlink: '$dotfile' -> '$file'" and next if $dryrun;    # chatty output;
+    say "Would like to create symlink: '$dotfile' -> '$target'" and next if $dryrun;  # chatty output;
 
     say "Not overwriting symlink for dotfile at $dotfile ..." and next                # warn on error;
       if -l $dotfile;                                                                 # if symlink already exists;
@@ -65,8 +84,8 @@ for my $file ( @files ) {                                                 # look
     say "Not overwriting preexisting dotfile at $dotfile ..." and next                # warn on error;
       if -f $dotfile or -d $dotfile;                                                  # if file or directory exists;
 
-    if ( symlink( $file, $dotfile ) ) {                                               # create symlink for dotfile;
-        say "Created symlink: '$dotfile' -> '$file'" if $verbose;                     # chatty output;
+    if ( symlink( $target, $dotfile ) ) {                                             # create symlink for dotfile;
+        say "Created symlink: '$dotfile' -> '$target'" if $verbose;                   # chatty output;
     }
     else {                                                                            # if symlink creation failed;
         warn "Could not create symlink for dotfile at $dotfile $!";                   # warn on error;
