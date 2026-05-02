@@ -4,7 +4,6 @@
 [user]
 	name = Carl Sutherland
 	email = carl@humblesoftware.com
-	signingkey = B2B5DC3118E4744E
 [format]
 	pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [push]
@@ -35,3 +34,5 @@
   gpgsign = true
 [url "https://github.com/"]
 	insteadOf = git://github.com/
+[include]
+  path = ~/.gitconfig.local
