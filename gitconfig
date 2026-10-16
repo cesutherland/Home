@@ -36,3 +36,5 @@
 	insteadOf = git://github.com/
 [include]
   path = ~/.gitconfig.local
+[gpg]
+	program = gpg2

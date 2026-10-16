@@ -8,3 +8,5 @@
 # vim files:
 *.vim
 *.swp
+
+**/.claude/settings.local.json
