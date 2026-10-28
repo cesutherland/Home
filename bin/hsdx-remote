@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Attach to an hsd factory on the devtop from the laptop, over Tailscale + mosh.
+#   hsdx-remote            list running factories
+#   hsdx-remote <name>     attach to that factory (name = its repo folder, e.g. hsd)
+# Needs mosh on both ends. Install as `hsdx` on the laptop if you like.
+set -euo pipefail
+HOST="${HSD_HOST:-carl@slimtop}"
+INSTANCE="${HSD_INSTANCE:-hsd}"
+GUEST_USER="${HSD_USER:-carl}"
+
+if [ $# -eq 0 ]; then
+  exec ssh "$HOST" "incus exec $INSTANCE -- su -l $GUEST_USER -c 'hsd ls'"
+fi
+exec mosh "$HOST" -- incus exec "$INSTANCE" --env TERM=xterm-256color -- \
+  su -l "$GUEST_USER" -c "hsd attach $(printf %q "$1")"

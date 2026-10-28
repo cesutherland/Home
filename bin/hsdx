@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Attach to an hsd factory in the hsd container, from the devtop.
+#   hsdx            list running factories
+#   hsdx <name>     attach to that factory (name = its repo folder, e.g. hsd)
+# Inside, prefix F switches between factories.
+set -euo pipefail
+INSTANCE="${HSD_INSTANCE:-hsd}"
+GUEST_USER="${HSD_USER:-carl}"
+
+if [ $# -eq 0 ]; then
+  exec incus exec "$INSTANCE" -- su -l "$GUEST_USER" -c 'hsd ls'
+fi
+exec incus exec "$INSTANCE" --env TERM="${TERM:-xterm-256color}" -- su -l "$GUEST_USER" -c "hsd attach $(printf %q "$1")"
