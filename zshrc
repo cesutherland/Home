@@ -117,7 +117,6 @@ bindkey -v
 export GPG_TTY=$(tty)
 
 source ~/.secret
-export GOPROXY="https://$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD@artifactory.squarespace.net/artifactory/api/go/go/"
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
 
 # NVM
