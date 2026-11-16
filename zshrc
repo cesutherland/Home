@@ -1,4 +1,3 @@
-export PATH=$HOME/.bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -117,7 +116,6 @@ bindkey -v
 export GPG_TTY=$(tty)
 
 source ~/.secret
-export PATH=$PATH:/usr/local/go/bin:~/go/bin
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
